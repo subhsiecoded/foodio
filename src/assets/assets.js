@@ -11,6 +11,7 @@ import pizza from "./pizza.png";
 import sandwiches from "./sandwiches.png";
 import burger from "./burger.png";
 import cakes from "./cakes.png";
+import beverage from "./beverages.png";
 import nonveg_1 from "./nonveg_1.png";
 import nonveg_2 from "./nonveg_2.png";
 import nonveg_3 from "./nonveg_3.png";
@@ -51,6 +52,12 @@ import cakes_2 from "./cakes_2.png";
 import cakes_3 from "./cakes_3.png";
 import cakes_4 from "./cakes_4.png";
 import cakes_5 from "./cakes_5.jpg";
+import beverages_1 from "./beverages_1.png";
+import beverages_2 from "./beverages_2.png";
+import beverages_3 from "./beverages_3.png";
+import beverages_4 from "./beverages_4.png";
+import beverages_5 from "./beverages_5.png";
+import beverages_6 from "./beverages_6.png"
 
 export const assets = {
   logo,
@@ -92,6 +99,10 @@ export const menu_list = [
   {
     menu_name: "Cakes",
     menu_image: cakes,
+  },
+  {
+    menu_name: "Beverages",
+    menu_image: beverage,
   },
 ];
 
@@ -445,4 +456,54 @@ export const food_list = [
       "Chocolate sponge cake layered with whipped cream and cherries.",
     category: "Cakes",
   },
+  // Beverages
+  {
+    _id: "41",
+    name: "Classic Lemonade",
+    image: beverages_1,
+    price: 150,
+    description: "Freshly squeezed lemonade with a hint of mint.",
+    category: "Beverages",
+  },
+  {
+    _id: "42",
+    name: "Iced Coffee",
+    image: beverages_2,
+    price: 200,
+    description: "Rich coffee served over ice with cream.",
+    category: "Beverages",
+  },
+  {
+    _id: "43",
+    name: "Mango Smoothie",
+    image: beverages_3,
+    price: 250,
+    description: "Creamy smoothie made with ripe mangoes and yogurt.",
+    category: "Beverages",
+  },
+  {
+    _id: "44",
+    name: "Herbal Tea",
+    image: beverages_4,
+    price: 100,
+    description: "Soothing herbal tea blend with chamomile and lavender.",
+    category: "Beverages",
+  },
+  {
+    _id: "45",
+    name: "Chocolate Milkshake",
+    image: beverages_5,
+    price: 300,
+    description: "Thick chocolate milkshake topped with whipped cream.",
+    category: "Beverages",
+  },
+  {
+    _id: "46",
+    name: "Sparkling Water",
+    image: beverages_6,
+    price: 120,
+    description: "Refreshing sparkling water with a hint of lemon.",
+    category: "Beverages",
+  }
+
 ];

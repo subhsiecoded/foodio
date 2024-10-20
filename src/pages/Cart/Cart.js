@@ -4,7 +4,10 @@ import { StoreContext } from "../../context/StoreContext";
 import CloseIcon from "@mui/icons-material/Close";
 
 const Cart = () => {
-  const { cartItems, food_list, removeFromCart } = useContext(StoreContext);
+  const { cartItems, food_list, removeFromCart, getTotalCartAmount } =
+    useContext(StoreContext);
+  const totalCartAmount = getTotalCartAmount();
+  const deliveryFee = totalCartAmount > 499 ? 0 : 90;
 
   return (
     <>
@@ -49,17 +52,17 @@ const Cart = () => {
             <div>
               <div className="cart-total-details">
                 <p>SubTotal</p>
-                <p>{0}</p>
+                <p>₹ {totalCartAmount}</p>
               </div>
               <hr />
               <div className="cart-total-details">
-                <p>Delivery Fee</p>
-                <p>{90}</p>
+                <p>Delivery Fee <br/> (Free delivery on orders above ₹ 499)</p>
+                <p>₹ {deliveryFee}</p>
               </div>
               <hr />
               <div className="cart-total-details">
                 <p>Total</p>
-                <p>{0}</p>
+                <p>₹ {totalCartAmount + deliveryFee}</p>
               </div>
             </div>
             <button>Proceed To Checkout</button>
@@ -68,7 +71,7 @@ const Cart = () => {
             <div>
               <p>If you have any promo code, use it here</p>
               <div className="cart-promocode-input">
-                <input type='text' placeholder="Promo Code" />
+                <input type="text" placeholder="Promo Code" />
                 <button>Submit</button>
               </div>
             </div>

@@ -6,6 +6,7 @@ import Cart from "./pages/Cart/Cart";
 import PlaceOrder from "./pages/PlaceOrder/PlaceOrder";
 import Footer from "./components/Footer/Footer";
 import LoginPopup from "./components/LoginPopup/LoginPopup";
+import { food_list } from "./assets/assets";
 
 const App = () => {
 
@@ -15,7 +16,7 @@ const App = () => {
     <>
     {showLogin?<LoginPopup setShowLogin={setShowLogin}/>:<></>}
       <div className="app">
-        <Navbar setShowLogin={setShowLogin} />
+        <Navbar setShowLogin={setShowLogin} searchItems={food_list}/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cart" element={<Cart />} />

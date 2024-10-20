@@ -22,10 +22,31 @@
     text-align: center;
     margin: 20px 0px;
     overflow-x: scroll;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
 }
 
-.explore-menu-list::-webkit-scrollbar{
-    display: none;
+/* scrollbar designs */
+.explore-menu-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.explore-menu-list::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+.explore-menu-list::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.explore-menu-list::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.explore-menu-list {
+    scroll-behavior: smooth;
 }
 
 .explore-menu-list-item img{
