@@ -2,13 +2,15 @@ import React, { useContext } from "react";
 import "./Cart.css";
 import { StoreContext } from "../../context/StoreContext";
 import CloseIcon from "@mui/icons-material/Close";
+import { useNavigate } from "react-router-dom";
 
 const Cart = () => {
   const { cartItems, food_list, removeFromCart, getTotalCartAmount } =
     useContext(StoreContext);
   const totalCartAmount = getTotalCartAmount();
-  const deliveryFee = totalCartAmount > 499 ? 0 : 90;
-
+  const deliveryFee = totalCartAmount > 499 || totalCartAmount === 0 ? 0 : 90;
+  const navigate = useNavigate();
+  
   return (
     <>
       <div className="cart">
@@ -65,7 +67,7 @@ const Cart = () => {
                 <p>₹ {totalCartAmount + deliveryFee}</p>
               </div>
             </div>
-            <button>Proceed To Checkout</button>
+            <button onClick={()=>navigate('/order')}>Proceed To Checkout</button>
           </div>
           <div className="cart-promocode">
             <div>
