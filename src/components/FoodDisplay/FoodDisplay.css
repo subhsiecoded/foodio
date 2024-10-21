@@ -14,3 +14,47 @@
     gap: 30px;
     row-gap: 50px;
 }
+
+.filter-container {
+    position: relative;
+}
+
+.filter-button {
+    background-color: tomato;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.filter-button:hover {
+    background-color: #c52d24;
+}
+
+.filter-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    border: 1px solid tomato;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    margin-top: 5px;
+}
+
+.filter-dropdown button {
+    background: none;
+    color: tomato;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
+
+.filter-dropdown button:hover {
+    background-color: #f8d7da; 
+}
