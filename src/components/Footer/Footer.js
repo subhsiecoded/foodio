@@ -17,6 +17,7 @@ const Footer = () => {
           </p>
           <div className="footer-social-icons">
             <a
+              className="instagram-icon"
               href="https://www.instagram.com/subhsie/"
               target="_blank"
               rel="noopener noreferrer"
@@ -24,6 +25,7 @@ const Footer = () => {
               <InstagramIcon />
             </a>
             <a
+              className="github-icon"
               href="https://github.com/subhsiecoded"
               target="_blank"
               rel="noopener noreferrer"
@@ -31,6 +33,7 @@ const Footer = () => {
               <GitHubIcon />
             </a>
             <a
+              className="linkedin-icon"
               href="https://www.linkedin.com/in/subhsie/"
               target="_blank"
               rel="noopener noreferrer"
