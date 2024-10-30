@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./FoodDisplay.css";
 import { StoreContext } from "../../context/StoreContext";
 import FoodItem from "../FoodItem/FoodItem";
@@ -7,6 +7,13 @@ const FoodDisplay = ({ category }) => {
   const { food_list } = useContext(StoreContext);
   const [sortOrder, setSortOrder] = useState(null);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [initialFoodList, setInitialFoodList] = useState([]);
+
+  // Initialize the randomized list only once per visit
+  useEffect(() => {
+    const shuffledList = [...food_list].sort(() => Math.random() - 0.5);
+    setInitialFoodList(shuffledList);
+  }, [food_list]);
 
   const getSortedFoodList = (list) => {
     let sortedList = [...list];
@@ -15,14 +22,12 @@ const FoodDisplay = ({ category }) => {
       sortedList.sort((a, b) => a.price - b.price);
     } else if (sortOrder === "highToLow") {
       sortedList.sort((a, b) => b.price - a.price);
-    } else {
-      sortedList.sort(() => Math.random() - 0.5);
     }
 
     return sortedList;
   };
 
-  const filteredFoodList = getSortedFoodList(food_list).filter((item) => {
+  const filteredFoodList = getSortedFoodList(initialFoodList).filter((item) => {
     return category === "All" || category === item.category;
   });
 
